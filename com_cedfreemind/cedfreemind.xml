@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.4" method="upgrade">
+    <name>com_cedfreemind</name>
+
+    <author>Galaxiis</author>
+    <creationDate>2016-12-31</creationDate>
+    <copyright>(c) 2011-2013 Cedric Walter www.waltercedric.com Copyright (C) 2013 galaxiis.com All rights reserved.</copyright>
+    <license>GNU/GPL 3.0</license>
+    <authorEmail>galaxiiscom@gmail.com</authorEmail>
+    <authorUrl>www.galaxiis.com</authorUrl>
+
+    <version>3.4.1</version>
+    <description>A set of modules, plugins extensions for SmugMug the famous paid digital photo sharing website</description>
+
+    <files folder="components/com_cedfreemind">
+        <file>index.html</file>
+    </files>
+
+    <languages folder="language/en-GB">
+        <language tag="en-GB">en-GB.com_cedfreemind.ini</language>
+    </languages>
+
+    <media destination="com_cedfreemind" folder="media/com_cedfreemind">
+        <folder>css</folder>
+        <folder>images</folder>
+        <folder>icons</folder>
+        <filename>index.html</filename>
+    </media>
+
+    <administration>
+        <menu link="option=com_cedfreemind">CedFreemind</menu>
+        <submenu>
+            <menu view="liveupdate" img="../media/com_cedfreemind/images/live-update.png">Live Update</menu>
+        </submenu>
+        <files folder="administrator/components/com_cedfreemind">
+            <folder>views</folder>
+            <folder>liveupdate</folder>
+            <file>cedfreemind.php</file>
+            <filename>config.xml</filename>
+            <file>controller.php</file>
+            <file>index.html</file>
+        </files>
+        <languages folder="administrator/language/en-GB">
+            <language tag="en-GB">en-GB.com_cedfreemind.ini</language>
+        </languages>
+    </administration>
+
+</extension>
