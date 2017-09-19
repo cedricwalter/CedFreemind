@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension version="3.4" type="module" client="site" method="upgrade">
+    <name>CedFreeMind | Galaxiis.com</name>
+    <element>mod_cedfreemind</element>
+
+    <creationDate>2017-09-19</creationDate>
+
+    <version>3.5.2</version>
+
+    <author>Galaxiis</author>
+    <authorEmail>galaxiiscom@gmail.com</authorEmail>
+    <authorUrl>www.galaxiis.com</authorUrl>
+
+    <copyright>Copyright (C) 2013-2017 galaxiis.com All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL 3.0</license>
+
+    <description>CedFreemind use a Flash browser to display your FreeMind map.</description>
+
+    <files>
+        <filename module="mod_cedfreemind">mod_cedfreemind.php</filename>
+        <filename module="mod_cedfreemind">index.html</filename>
+        <folder>tmpl</folder>
+    </files>
+
+    <languages>
+        <language tag="en-GB">en-GB.mod_cedfreemind.ini</language>
+        <language tag="en-GB">en-GB.mod_cedfreemind.sys.ini</language>
+    </languages>
+
+    <config addfieldpath="libraries/galaxiis/fields">
+        <fields name="params">
+            <fieldset name="basic">
+                <field shortId="cedfreemind"
+                        name="toolbar"
+                        type="galaxiisbar"/>
+                <field
+                        name="message"
+                        type="galaxiismessage"
+                        message="note"
+                        label="Please help us: vote, suggest and give us your opinion in the Joomla extensions directory. With this you will help us to increase our interest to modify and update the extension. Thank you very much."/>
+                <field
+                        name="downloadid"
+                        type="galaxiisdownloadid"
+                        message="download id"
+                />
+                <field
+                        name="version_msg"
+                        type="galaxiismessage"
+                        message="version"
+                        version="3.5.2"
+                        extension_name="CedFreemind"/>
+            </fieldset>
+            <fieldset name="Freemind">
+                <field name="map" type="FreemindList" default="media/plg_content_cedfreemind/welcome.mm" label="MOD_CEDFREEMIND_MAP"
+                       required="true"
+                       stripext="0"
+                       directories="media|images"
+                       hide_none="1"
+                       hide_default="1"
+                       filter="\.mm$"
+                       size="10"
+                       description="MOD_CEDFREEMIND_MAP_DESC"/>
+
+                <field name="height" type="integer" default="200"
+                       first="0"
+                       last="1000"
+                       step="1"
+                       label="MOD_CEDFREEMIND_DEFAULT_HEIGHT" description="MOD_CEDFREEMIND_DEFAULT_HEIGHT_DESC"/>
+                <field name="width" type="integer" default="200"
+                       first="0"
+                       last="1000"
+                       step="1"
+                       label="MOD_CEDFREEMIND_DEFAULT_WIDTH" description="MOD_CEDFREEMIND_DEFAULT_WIDTH_DESC"/>
+
+                <field name="quality" type="radio" default="high"
+                       label="MOD_CEDFREEMIND_FLASH_QUALITY" description="MOD_CEDFREEMIND_FLASH_QUALITY_DESC" class="btn-group">
+                    <option value="high">MOD_CEDFREEMIND_HIGH</option>
+                    <option value="low">MOD_CEDFREEMIND_LOW</option>
+                </field>
+                <field name="bgcolor" type="color" validate="color" default="#ffffff"
+                       label="MOD_CEDFREEMIND_BGCOLOR" description="MOD_CEDFREEMIND_BGCOLOR_DESC"/>
+
+                <field name="toolTipsBgColor" type="color" validate="color" default="#ffffff"
+                       label="PLG_CONTENT_CEDFREEMIND_TOOLTIP_COLOR" description="PLG_CONTENT_CEDFREEMIND_TOOLTIP_COLOR_DESC"/>
+
+                <field name="wmode" type="radio" default="opaque"
+                       label="MOD_CEDFREEMIND_WINDOWS_MODE" description="MOD_CEDFREEMIND_WINDOWS_MODE_DESC" class="btn-group">
+                    <option value="transparent">MOD_CEDFREEMIND_TRANSPARENT</option>
+                    <option value="opaque">MOD_CEDFREEMIND_OPAQUE</option>
+                </field>
+
+                <field name="defaultWordWrap" type="integer" default="200"
+                       first="0"
+                       last="1000"
+                       step="1"
+                       label="MOD_CEDFREEMIND_DEFAULT_WORD_WRAP" description="MOD_CEDFREEMIND_DEFAULT_WORD_WRAP_DESC"/>
+
+                <field name="maxNodeWidth" type="integer" default="400"
+                       first="0"
+                       last="1000"
+                       step="1"
+                       label="MOD_CEDFREEMIND_MAX_NODE_WIDTH" description="MOD_CEDFREEMIND_MAX_NODE_WIDTH_DESC"/>
+
+                <field name="defaultToolTipWordWrap" type="integer" default="200"
+                       label="MOD_CEDFREEMIND_DEFAULT_TOOLTIP_WORD_WRAP"
+                       description="MOD_CEDFREEMIND_DEFAULT_TOOLTIP_WORD_WRAP_DESC"
+                       first="0"
+                       last="1000"
+                       step="1"/>
+
+                <field name="startCollapsedToLevel" type="radio" default="2"
+                       label="MOD_CEDFREEMIND_START_COLLAPSED_TO_LEVEL"
+                       description="MOD_CEDFREEMIND_START_COLLAPSED_TO_LEVEL_DESC" class="btn-group">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </field>
+
+                <field name="openUrl" type="list" default="_parent"
+                       label="MOD_CEDFREEMIND_OPEN_URL" description="MOD_CEDFREEMIND_OPEN_URL_DESC">
+                    <option value="_parent">MOD_CEDFREEMIND_PARENT</option>
+                    <option value="_blank">MOD_CEDFREEMIND_BLANK</option>
+                    <option value="_top">MOD_CEDFREEMIND_TOP</option>
+                    <option value="_self">MOD_CEDFREEMIND_SELF</option>
+                </field>
+
+                <field name="scaleTooltips" type="radio" default="0"
+                       label="MOD_CEDFREEMIND_SCALE_TOOLTIPS" description="MOD_CEDFREEMIND_SCALE_TOOLTIPS_DESC" class="btn-group">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field name="unfoldAll" type="radio" default="0"
+                       label="MOD_CEDFREEMIND_UNFOLD_ALL" description="MOD_CEDFREEMIND_UNFOLD_ALL_DESC" class="btn-group">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field name="buttonsPos" type="radio" default="top"
+                       label="MOD_CEDFREEMIND_BUTTONS_POS" description="MOD_CEDFREEMIND_BUTTONS_POS_DESC" class="btn-group">
+                    <option value="top">MOD_CEDFREEMIND_TOP</option>
+                    <option value="bottom">MOD_CEDFREEMIND_BOTTOM</option>
+                </field>
+
+                <field name="noElipseMode" type="radio" default="false"
+                       label="PLG_CONTENT_CEDFREEMIND_NO_ELIPSE_MODE" description="PLG_CONTENT_CEDFREEMIND_NO_ELIPSE_MODE_DESC" class="btn-group">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+                <field name="justMap" type="radio" default="false"
+                       label="PLG_CONTENT_CEDFREEMIND_JUST_MAP" description="PLG_CONTENT_CEDFREEMIND_JUST_MAP_DESC" class="btn-group">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+
+                <field name="mainNodeShape" type="radio" default="rectangle"
+                       label="PLG_CONTENT_CEDFREEMIND_MAIN_NODE_SHAPE" description="PLG_CONTENT_CEDFREEMIND_MAIN_NODE_SHAPE_DESC" class="btn-group">
+                    <option value="ellipse">PLG_CONTENT_CEDFREEMIND_MAIN_NODE_SHAPE_ELLIPSE</option>
+                    <option value="rectangle">PLG_CONTENT_CEDFREEMIND_MAIN_NODE_SHAPE_RECTANGLE</option>
+                    <option value="none">PLG_CONTENT_CEDFREEMIND_MAIN_NODE_SHAPE_NONE</option>
+                </field>
+
+
+                <field name="min_alpha_buttons" type="integer" default="20"
+                       first="0"
+                       last="100"
+                       step="1"
+                       label="MOD_CEDFREEMIND_MIN_ALPHA_BUTTONS"
+                       description="MOD_CEDFREEMIND_MIN_ALPHA_BUTTONS_DESC"/>
+
+                <field name="max_alpha_buttons" type="integer" default="100"
+                       first="0"
+                       last="100"
+                       step="1"
+                       label="MOD_CEDFREEMIND_MAX_ALPHA_BUTTONS"
+                       description="MOD_CEDFREEMIND_MAX_ALPHA_BUTTONS_DESC"/>
+            </fieldset>
+            <fieldset name="advanced">
+                <field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC"/>
+                <field name="moduleclass_sfx" type="textarea" rows="3" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                       description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
+                <field name="cache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+                <field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC"/>
+                <field name="cachemode" type="hidden" default="static">
+                    <option value="static"/>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

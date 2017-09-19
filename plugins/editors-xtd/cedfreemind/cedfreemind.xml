@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4" type="plugin" group="editors-xtd" method="upgrade">
+    <name>PLG_EDITORXTD_CEDFREEMIND</name>
+    <creationDate>2017-09-19</creationDate>
+
+    <version>3.5.2</version>
+
+    <author>Galaxiis</author>
+    <authorEmail>galaxiiscom@gmail.com</authorEmail>
+    <authorUrl>www.galaxiis.com</authorUrl>
+
+    <copyright>Copyright (C) 2013-2017 galaxiis.com All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL 3.0</license>
+
+    <description>PLG_EDITORXTD_CEDFREEMIND_DESCRIPTION</description>
+    <files>
+        <filename plugin="cedfreemind">cedfreemind.php</filename>
+		<filename plugin="cedfreemind">index.html</filename>
+        <folder>language</folder>
+    </files>
+
+</extension>

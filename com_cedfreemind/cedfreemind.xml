@@ -3,13 +3,13 @@
     <name>com_cedfreemind</name>
 
     <author>Galaxiis</author>
-    <creationDate>2016-12-31</creationDate>
+    <creationDate>2017-09-19</creationDate>
     <copyright>(c) 2011-2013 Cedric Walter www.waltercedric.com Copyright (C) 2013 galaxiis.com All rights reserved.</copyright>
     <license>GNU/GPL 3.0</license>
     <authorEmail>galaxiiscom@gmail.com</authorEmail>
     <authorUrl>www.galaxiis.com</authorUrl>
 
-    <version>3.4.1</version>
+    <version>3.5.2</version>
     <description>A set of modules, plugins extensions for SmugMug the famous paid digital photo sharing website</description>
 
     <files folder="components/com_cedfreemind">
@@ -21,20 +21,14 @@
     </languages>
 
     <media destination="com_cedfreemind" folder="media/com_cedfreemind">
-        <folder>css</folder>
-        <folder>images</folder>
         <folder>icons</folder>
         <filename>index.html</filename>
     </media>
 
     <administration>
         <menu link="option=com_cedfreemind">CedFreemind</menu>
-        <submenu>
-            <menu view="liveupdate" img="../media/com_cedfreemind/images/live-update.png">Live Update</menu>
-        </submenu>
         <files folder="administrator/components/com_cedfreemind">
             <folder>views</folder>
-            <folder>liveupdate</folder>
             <file>cedfreemind.php</file>
             <filename>config.xml</filename>
             <file>controller.php</file>
